@@ -6,6 +6,7 @@ flight::flight()
 {
 	setName("Flight");
 	setKey(70);
+	setRenderModule(false);
 	setCategory(category::PLAYER);
 	setEnabled(true);
 }

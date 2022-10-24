@@ -12,7 +12,7 @@ void akiraThread()
     freopen_s(&fOut, "conout$", "w", stdout);
     freopen_s(&fOut, "conout$", "w", stderr);
 
-    Sleep(3000);
+    Sleep(6000);
 #endif
 
     akira::instance = std::make_unique<akira::c_akira>();

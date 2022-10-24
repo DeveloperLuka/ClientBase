@@ -10,24 +10,40 @@ jclass sdk::c_minecraft::klass()
 
 jobject sdk::c_minecraft::getMinecraft()
 {
-	jfieldID fid = akira::instance->getEnv()->GetStaticFieldID(klass(), "S", "Lave;");
-	jobject ret = akira::instance->getEnv()->GetStaticObjectField(klass(), fid);
+	jclass minecraftClass = klass();
+	
+	jfieldID fid = akira::instance->getEnv()->GetStaticFieldID(minecraftClass, "S", "Lave;");
+	jobject ret = akira::instance->getEnv()->GetStaticObjectField(minecraftClass, fid);
+
+	akira::instance->getEnv()->DeleteLocalRef(minecraftClass);
 
 	return ret;
 }
 
 jobject sdk::c_minecraft::getPlayer()
 {
-	jfieldID fid = akira::instance->getEnv()->GetFieldID(klass(), "h", "Lbew;");
-	jobject ret = akira::instance->getEnv()->GetObjectField(getMinecraft(), fid);
+	jclass minecraftClass = klass();
+	jobject minecraft = getMinecraft();
+
+	jfieldID fid = akira::instance->getEnv()->GetFieldID(minecraftClass, "h", "Lbew;");
+	jobject ret = akira::instance->getEnv()->GetObjectField(minecraft, fid);
+
+	akira::instance->getEnv()->DeleteLocalRef(minecraftClass);
+	akira::instance->getEnv()->DeleteLocalRef(minecraft);
 
 	return ret;
 }
 
 jobject sdk::c_minecraft::getWorld()
 {
-	jfieldID fid = akira::instance->getEnv()->GetFieldID(klass(), "f", "Ldbd;");
-	jobject ret = akira::instance->getEnv()->GetObjectField(getMinecraft(), fid);
+	jclass minecraftClass = klass();
+	jobject minecraft = getMinecraft();
+
+	jfieldID fid = akira::instance->getEnv()->GetFieldID(minecraftClass, "f", "Ldbd;");
+	jobject ret = akira::instance->getEnv()->GetObjectField(minecraft, fid);
+
+	akira::instance->getEnv()->DeleteLocalRef(minecraftClass);
+	akira::instance->getEnv()->DeleteLocalRef(minecraft);
 
 	return ret;
 }

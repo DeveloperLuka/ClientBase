@@ -18,6 +18,7 @@ protected:
 	// TODO Make pointers for entityplayer & world stuff
 public:
 	bool enabled;
+	bool renderModule;
 
 	const char* getName();
 	void setName(const char* name);
@@ -25,6 +26,9 @@ public:
 	int getKey();
 	void setKey(int key);
 	
+	bool isRenderModule();
+	void setRenderModule(bool renderModule);
+
 	bool isEnabled();
 	void setEnabled(bool enabled);
 

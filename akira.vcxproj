@@ -72,22 +72,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;C:\Users\LukaA\source\repos\akira\akira;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;$(WindowsSDK_IncludePath);$(ProjectDir);$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\Java\jdk1.8.0_202\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;C:\Users\LukaA\source\repos\akira\akira;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;$(WindowsSDK_IncludePath);$(ProjectDir);$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\Java\jdk1.8.0_202\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;C:\Users\LukaA\source\repos\akira\akira;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;$(WindowsSDK_IncludePath);$(ProjectDir);$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\Java\jdk1.8.0_202\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;C:\Users\LukaA\source\repos\akira\akira;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_202\include;C:\Program Files\Java\jdk1.8.0_202\include\win32;C:\Program Files\Java\jdk1.8.0_202\include\win32\bridge;$(WindowsSDK_IncludePath);$(ProjectDir);$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\Java\jdk1.8.0_202\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -182,7 +182,6 @@
     <ClCompile Include="sdk\imgui\imgui_draw.cpp" />
     <ClCompile Include="sdk\imgui\imgui_impl_opengl2.cpp" />
     <ClCompile Include="sdk\imgui\imgui_impl_win32.cpp" />
-    <ClCompile Include="sdk\imgui\imgui_tables.cpp" />
     <ClCompile Include="sdk\imgui\imgui_widgets.cpp" />
     <ClCompile Include="sdk\minecraft\minecraft.cpp" />
     <ClCompile Include="sdk\minecraft\player\player.cpp" />

@@ -23,6 +23,17 @@ void module::setKey(int key)
 }
 
 
+bool module::isRenderModule()
+{
+	return renderModule;
+}
+
+void module::setRenderModule(bool renderModule)
+{
+	this->renderModule = renderModule;
+}
+
+
 bool module::isEnabled()
 {
 	return enabled;

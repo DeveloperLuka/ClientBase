@@ -44,7 +44,7 @@ void akira::c_akira::run()
 
 	while (true)
 	{
-		for (module* m : moduleMngr->getModules())
+		for (const auto m : moduleMngr->getModules())
 		{
 			if (m->isEnabled())
 				m->onTick();

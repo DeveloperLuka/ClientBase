@@ -19,13 +19,32 @@ c_player::~c_player()
 
 jobject c_player::getCapabilities()
 {
-	jfieldID fid = akira::instance->getEnv()->GetFieldID(akira::instance->getEnv()->GetObjectClass(player), "bA", "Lwl;");
+	if (!player) return 0;
+	
+	jclass playerClass = akira::instance->getEnv()->GetObjectClass(player);
+
+	jfieldID fid = akira::instance->getEnv()->GetFieldID(playerClass, "bA", "Lwl;");
 	jobject ret = akira::instance->getEnv()->GetObjectField(player, fid);
+
+	akira::instance->getEnv()->DeleteLocalRef(playerClass);
+
 	return ret;
 }
 
 void c_player::setFlying(bool state)
 {
-	jfieldID fid = akira::instance->getEnv()->GetFieldID(akira::instance->getEnv()->GetObjectClass(getCapabilities()), "b", "Z");
-	akira::instance->getEnv()->SetBooleanField(getCapabilities(), fid, state);
+	jobject capabilities = getCapabilities();
+	if (!capabilities)
+	{ 
+		akira::instance->getEnv()->DeleteLocalRef(capabilities);
+		return;
+	}
+		
+	jclass capabilitiesClass = akira::instance->getEnv()->GetObjectClass(capabilities);
+
+	jfieldID fid = akira::instance->getEnv()->GetFieldID(capabilitiesClass, "b", "Z");
+	akira::instance->getEnv()->SetBooleanField(capabilities, fid, state);
+	
+	akira::instance->getEnv()->DeleteLocalRef(capabilitiesClass);
+	akira::instance->getEnv()->DeleteLocalRef(capabilities);
 }

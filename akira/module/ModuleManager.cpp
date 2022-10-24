@@ -6,8 +6,8 @@
 
 moduleManager::moduleManager()
 {
-	modules.push_back(new flight());
 	modules.push_back(new clickgui());
+	modules.push_back(new flight());
 }
 
 std::vector<module*> moduleManager::getModules()
@@ -17,7 +17,7 @@ std::vector<module*> moduleManager::getModules()
 
 module* moduleManager::getModuleByName(const char* name)
 {
-	for (module* m : modules)
+	for (const auto m : modules)
 	{
 		if (strcmp(m->getName(), name) == 0)
 		{
@@ -31,7 +31,7 @@ module* moduleManager::getModuleByName(const char* name)
 std::vector<module*> moduleManager::getModulesByCategory(category category)
 {
 	std::vector<module*> res;
-	for (module* m : modules)
+	for (const auto m : modules)
 	{
 		if (m->getCategory() == category)
 		{

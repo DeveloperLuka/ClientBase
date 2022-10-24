@@ -137,9 +137,6 @@
     <ClCompile Include="sdk\imgui\imgui_impl_win32.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sdk\imgui\imgui_tables.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="sdk\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
